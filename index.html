@@ -1,228 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <title>Godfrey Alindi | Telecom, AI & Project Delivery Leader</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio and personal site of Godfrey Alindi – Telecom, AI & Project Delivery Leader." />
+
+  <title>Godfrey Alindi | Telecom, AI & Project Delivery Leader</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Official portfolio of Godfrey Alindi — Telecom, AI & Project Delivery Leader working across Africa. Greenfield rollout leadership, AI-driven solutions, and emerging technology innovation." />
+  <meta name="keywords" content="Godfrey Alindi, Alindi, Telecom, AI, Project Delivery, Africa, Safaricom Ethiopia, Nokia, RAN, Rollout, Network Deployment, AI Solutions" />
+
+  <!-- OpenGraph (for LinkedIn/Facebook previews) -->
+  <meta property="og:title" content="Godfrey Alindi | Telecom, AI & Project Delivery Leader" />
+  <meta property="og:description" content="Telecom & AI leader delivering large-scale rollout, emerging-tech solutions, and sustainable impact across Africa." />
+  <meta property="og:image" content="https://orayalindi.com/og_orayalindi.png" />
+  <meta property="og:url" content="https://orayalindi.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Godfrey Alindi | Telecom, AI & Project Delivery Leader" />
+  <meta name="twitter:description" content="Telecom & AI leader delivering large-scale rollout and real-world solutions." />
+  <meta name="twitter:image" content="https://orayalindi.com/og_orayalindi.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon_ga.png" />
+
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-alt: #020617;
-      --card: #020617;
       --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.2);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
+      --accent-light: rgba(56, 189, 248, 0.25);
+      --bg-dark: #020617;
+      --bg-light: #f7f9fc;
+      --text-dark: #e5e7eb;
+      --text-light: #0f172a;
+      --muted-dark: #94a3b8;
+      --muted-light: #6b7280;
+      --card-dark: #020617;
+      --card-light: #ffffff;
       --radius: 14px;
-      --shadow: 0 18px 45px rgba(0,0,0,0.45);
+      --transition: 0.3s ease;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    [data-theme="dark"] {
+      --bg: var(--bg-dark);
+      --text: var(--text-dark);
+      --muted: var(--muted-dark);
+      --card: var(--card-dark);
+    }
+
+    [data-theme="light"] {
+      --bg: var(--bg-light);
+      --text: var(--text-light);
+      --muted: var(--muted-light);
+      --card: var(--card-light);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1f2937, #020617 60%);
+      background: radial-gradient(circle at top, #1e293b, var(--bg) 55%);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      transition: background var(--transition), color var(--transition);
     }
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     header {
+      backdrop-filter: blur(18px);
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(15,23,42,0.85));
-      border-bottom: 1px solid var(--border);
+      z-index: 50;
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+      background: rgba(15,23,42,0.9);
     }
 
-    .nav {
-      max-width: 960px;
+    nav {
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 0.9rem 1.5rem;
+      padding: 0.75rem 1.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
     }
 
-    .nav-left span {
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      font-size: 0.9rem;
+    nav strong {
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      font-size: 0.85rem;
       color: var(--muted);
     }
 
-    .nav-right a {
-      margin-left: 1.2rem;
-      font-size: 0.9rem;
+    nav .links a {
+      margin-left: 1.1rem;
       color: var(--muted);
     }
 
-    .nav-right a:hover { color: var(--accent); }
+    nav .links a:hover {
+      color: var(--accent);
+    }
+
+    #themeToggle {
+      cursor: pointer;
+      margin-left: 1.1rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.35);
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(15,23,42,0.7);
+    }
+
+    #themeToggle:hover {
+      border-color: var(--accent-light);
+      color: var(--accent);
+    }
 
     main {
-      max-width: 960px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+      padding: 2.2rem 1.5rem 4rem;
     }
 
     section { margin-bottom: 3rem; }
 
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr);
-      gap: 2rem;
-      margin-top: 1.5rem;
+    .section-title {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.8rem;
+    .card {
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.14), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(15,23,42,0.9), transparent 60%),
+                  var(--card);
+      padding: 1.6rem 1.7rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(148,163,184,0.22);
+      box-shadow: 0 18px 45px rgba(15,23,42,0.7);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
     }
-    .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-light);
+      box-shadow: 0 22px 60px rgba(15,23,42,0.85);
+    }
 
     h1 {
-      font-size: clamp(2.1rem, 4vw, 2.8rem);
-      margin-top: 1rem;
-      margin-bottom: 0.4rem;
+      font-size: clamp(2.1rem, 3.2vw, 2.7rem);
       letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
     }
 
-    .subtitle { font-size: 1.05rem; color: var(--muted); max-width: 40rem; }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p.lead {
+      font-size: 1.02rem;
+      max-width: 40rem;
+      color: var(--muted);
+    }
 
     .hero-actions {
-      margin-top: 1.4rem;
+      margin-top: 1.5rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 0.7rem;
     }
 
     .btn {
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.55rem 1.2rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      border: 1px solid var(--border);
+      border: 1px solid transparent;
       cursor: pointer;
       transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, border-color 120ms ease;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     .btn-primary {
       background: linear-gradient(to right, #0ea5e9, #22c55e);
-      border: none;
-      color: #0b1120;
+      color: #020617;
       font-weight: 600;
-      box-shadow: 0 10px 30px rgba(34,197,94,0.25);
+      box-shadow: 0 12px 30px rgba(34,197,94,0.3);
     }
+
     .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(34,197,94,0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(34,197,94,0.45);
     }
 
-    .btn-ghost {
-      background: rgba(15,23,42,0.8);
+    .btn-outline {
+      border-color: rgba(148,163,184,0.7);
       color: var(--muted);
+      background: rgba(15,23,42,0.6);
     }
 
-    .btn-ghost:hover {
-      border-color: var(--accent-soft);
-      background: rgba(15,23,42,0.95);
+    .btn-outline:hover {
+      border-color: var(--accent-light);
+      color: var(--accent);
+      background: rgba(15,23,42,0.9);
     }
 
-    .card {
-      background: radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(34,197,94,0.08), transparent 55%),
-                  var(--card);
-      border-radius: var(--radius);
-      border: 1px solid rgba(148,163,184,0.18);
-      padding: 1.3rem 1.4rem;
-      box-shadow: var(--shadow);
+    ul {
+      margin-left: 1.2rem;
+      margin-top: 0.4rem;
     }
 
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    li {
+      margin-bottom: 0.25rem;
+      font-size: 0.93rem;
+    }
+
+    .muted {
       color: var(--muted);
-      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
     }
-
-    h2 { font-size: 1.5rem; margin-bottom: 0.7rem; }
-    h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
-    .muted { color: var(--muted); font-size: 0.9rem; }
-
-    .grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
-
-    .pill {
-      padding: 0.1rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    ul { margin-left: 1.2rem; margin-top: 0.4rem; }
-    li { margin-bottom: 0.25rem; font-size: 0.92rem; }
 
     footer {
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(148,163,184,0.25);
       font-size: 0.8rem;
       color: var(--muted);
       text-align: center;
     }
 
-    @media (min-width: 720px) {
-      .hero { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: center; }
-      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 640px) {
+      nav .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.6rem;
+      }
+      nav .links a {
+        margin-left: 0.6rem;
+      }
+      main {
+        padding-inline: 1.1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 <header>
-  <nav class="nav">
-    <div class="nav-left"><span>GODFREY ALINDI</span></div>
-    <div class="nav-right">
+  <nav>
+    <strong>GODFREY ALINDI</strong>
+    <div class="links">
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#writing">Writing</a>
       <a href="#now">Now</a>
       <a href="#contact">Contact</a>
+      <a href="/blog/">Blog</a>
+      <button id="themeToggle" type="button">☀️ / 🌙</button>
     </div>
   </nav>
 </header>
 
 <main>
-
   <!-- HERO -->
-  <section id="home" class="hero">
-    <div>
-      <div class="badge"><span class="dot"></span><span>Telecom • AI • Delivery</span></div>
-      <h1>Telecom, AI & Project Delivery Leader</h1>
-      <p class="subtitle">
+  <section id="home">
+    <div class="section-title">Profile</div>
+    <div class="card">
+      <h1>Telecom, AI &amp; Project Delivery Leader</h1>
+      <p class="lead">
         I design, build and lead complex technology projects across Africa – from greenfield telecom rollouts
-        to AI-driven solutions that solve real-world problems.
+        to AI-driven solutions that solve real-world problems and create long-term impact.
       </p>
       <div class="hero-actions">
         <a href="#work" class="btn btn-primary">View my work</a>
-        <a href="#contact" class="btn btn-ghost">Contact me</a>
+        <a href="Alindi_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV (PDF)</a>
       </div>
     </div>
   </section>
@@ -238,80 +305,52 @@
         <strong>network deployment, project management and emerging technologies</strong>.
       </p>
       <p>
-        From greenfield rollout leadership to health and safety to AI-driven pilots, my work has always been
-        about building systems that serve people at scale. A defining chapter of my career was helping build a
-        nationwide network from zero, under immense pressure and with the responsibility of delivering safely.
+        From leading greenfield rollout efforts with aggressive timelines, to embedding health and safety
+        into daily operations, to exploring practical applications of AI and machine learning, my work is
+        grounded in execution, resilience and impact.
       </p>
       <p>
-        Today, I’m deeply interested in the convergence of <strong>AI, telecom, sustainability and human-centred design</strong>.
-        This site is where I document my trajectory, my projects and the evolution of my life’s work.
+        Today, I’m particularly interested in how <strong>AI, connectivity and sustainable infrastructure</strong>
+        can be combined to build systems that genuinely improve people’s lives — whether in telecom,
+        transport, agritech or holistic wellbeing.
       </p>
     </div>
   </section>
 
   <!-- WORK -->
   <section id="work">
-    <div class="section-title">Work & Projects</div>
-
-    <div class="grid grid-2">
-
-      <div class="card">
-        <h3>Greenfield Telecom Rollout – Startup Lead</h3>
-        <p class="muted">Safaricom Ethiopia • 2021–2024</p>
-        <p>
-          Led critical workstreams in the launch of a new telecom operator, coordinating teams across vendor,
-          operator and partners to deliver a nationwide network from scratch.
-        </p>
-        <ul>
-          <li>Coordinated teams across radio, transmission and core rollout.</li>
-          <li>Established deployment processes in a new, challenging market.</li>
-          <li>Championed health & safety across all field operations.</li>
-          <li>Contributed significantly to the zero-to-live nationwide launch.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Nokia Rollout & ESG Projects</h3>
-        <p class="muted">Project / Volunteer PM</p>
-        <p>
-          Supported technical rollout activities while leading ESG-focused initiatives within Nokia, aligning
-          technical and organisational impact goals.
-        </p>
-        <ul>
-          <li>Managed timelines, risks and cross-team communication.</li>
-          <li>Bridged business, technology and social impact objectives.</li>
-          <li>Helped operationalize ESG targets in project execution.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>AI & No-Code Machine Learning Solutions</h3>
-        <p class="muted">Certification & Prototypes</p>
-        <p>
-          Built practical AI prototypes, including spam SMS classification and demand forecasting tools,
-          focusing on translating AI value for non-technical stakeholders.
-        </p>
-        <ul>
-          <li>Developed ML prototypes without heavy coding.</li>
-          <li>Built an SMS spam classifier for fraud reduction.</li>
-          <li>Delivered insights in accessible, business-ready language.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Emerging Interests – EVs, Agritech & Wellness</h3>
-        <p class="muted">Concept Exploration</p>
-        <p>
-          Exploring future-impact opportunities across transport electrification, agritech intelligence and
-          holistic wellness systems.
-        </p>
-        <ul>
-          <li>EV rickshaw business and policy feasibility in Kenya.</li>
-          <li>LLM-driven tools for smallholder farmer insurance & support.</li>
-          <li>Holistic wellness and performance concept development.</li>
-        </ul>
-      </div>
-
+    <div class="section-title">Work &amp; Projects</div>
+    <div class="card">
+      <h2>Selected Work</h2>
+      <h3>Safaricom Ethiopia – Greenfield Telecom Rollout</h3>
+      <p class="muted">Startup Lead • 2021–2024</p>
+      <ul>
+        <li>Coordinated radio, transmission and core rollout activities in a new market.</li>
+        <li>Helped establish scalable processes for deployment, acceptance and optimisation.</li>
+        <li>Championed health &amp; safety standards across field operations.</li>
+        <li>Contributed to taking the network from zero to nationwide live service.</li>
+      </ul>
+      <h3 style="margin-top:1rem;">Nokia – Rollout &amp; ESG Initiatives</h3>
+      <p class="muted">Project &amp; Volunteer PM</p>
+      <ul>
+        <li>Supported rollout and technical delivery across diverse teams and stakeholders.</li>
+        <li>Participated in ESG-aligned projects, linking commercial delivery with impact goals.</li>
+        <li>Developed communication and governance practices for complex, multi-party programs.</li>
+      </ul>
+      <h3 style="margin-top:1rem;">AI &amp; No-Code Machine Learning Projects</h3>
+      <p class="muted">Certification &amp; Prototyping</p>
+      <ul>
+        <li>Completed a No Code Machine Learning &amp; AI certification.</li>
+        <li>Built prototype models for SMS spam detection and demand forecasting.</li>
+        <li>Focused on translating technical results into business-ready insights.</li>
+      </ul>
+      <h3 style="margin-top:1rem;">Exploration – EV, Agritech &amp; Wellness Concepts</h3>
+      <p class="muted">Concept &amp; Business-Case Development</p>
+      <ul>
+        <li>Assessed EV rickshaw electrification opportunities and policy context in East Africa.</li>
+        <li>Explored LLM-driven tools to support smallholder farmers and agricultural insurance.</li>
+        <li>Developed a concept for a holistic wellness space integrating fitness, mindset and mentoring.</li>
+      </ul>
     </div>
   </section>
 
@@ -319,15 +358,19 @@
   <section id="writing">
     <div class="section-title">Writing</div>
     <div class="card">
-      <h2>Essays & Reflections</h2>
-      <p>This section will feature:</p>
+      <h2>Essays &amp; Reflections</h2>
+      <p>
+        I’m working on a series of short essays and notes that will live on this site and in the blog:
+      </p>
       <ul>
-        <li>Insights on telecom, connectivity and infrastructure.</li>
-        <li>AI, data and their real-world applications.</li>
-        <li>Leadership lessons from demanding environments.</li>
-        <li>Ideas from books and philosophy that shape my thinking.</li>
+        <li>Lessons from building networks and teams under real-world constraints.</li>
+        <li>How AI and data can be used pragmatically in telecom and adjacent industries.</li>
+        <li>Leadership, resilience and personal growth across difficult projects.</li>
+        <li>Books, ideas and philosophies that have shaped the way I think about work and life.</li>
       </ul>
-      <p class="muted">New writing coming soon.</p>
+      <p class="muted" style="margin-top:0.6rem;">
+        Visit the <a href="/blog/">blog</a> to see new posts as they’re published.
+      </p>
     </div>
   </section>
 
@@ -338,9 +381,9 @@
       <h2>What I’m focused on now</h2>
       <p class="muted">Updated: December 2025</p>
       <ul>
-        <li>Transitioning into my next chapter in project/tech leadership & AI-driven roles.</li>
-        <li>Deepening my skills in ML, LLMs and practical applied AI.</li>
-        <li>Exploring long-term impact at the intersection of telecom, sustainability and wellbeing.</li>
+        <li>Exploring my next chapter in project, delivery and technology leadership roles.</li>
+        <li>Deepening practical skills in machine learning, LLMs and applied AI.</li>
+        <li>Clarifying a long-term path at the intersection of telecom, AI, sustainability and human wellbeing.</li>
       </ul>
     </div>
   </section>
@@ -350,32 +393,40 @@
     <div class="section-title">Contact</div>
     <div class="card">
       <h2>Let’s connect</h2>
-      <p>I’m open to opportunities and conversations related to:</p>
+      <p>
+        I’m open to conversations and opportunities related to:
+      </p>
       <ul>
-        <li>Telecom rollout & project delivery leadership</li>
-        <li>AI-enabled operational solutions</li>
-        <li>Agritech, electrification & wellness innovation</li>
+        <li>Telecom rollout &amp; large-scale project delivery.</li>
+        <li>AI-enabled solutions in real-world operations.</li>
+        <li>Concepts in electrification, agritech or holistic performance.</li>
       </ul>
-      <p style="margin-top: 0.6rem;">
-        <strong>Email:</strong>  
-        <a href="mailto:godfrey.alindi@gmail.com">godfrey.alindi@gmail.com</a><br /><br />
-        
-        <strong>LinkedIn:</strong>  
-        <a href="https://www.linkedin.com/in/oray-alindi-g/" target="_blank">
+      <p style="margin-top:0.6rem;">
+        <strong>Email:</strong>
+        <a href="mailto:godfrey.alindi@gmail.com">godfrey.alindi@gmail.com</a><br />
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/oray-alindi-g/" target="_blank" rel="noreferrer">
           linkedin.com/in/oray-alindi-g/
         </a>
       </p>
     </div>
   </section>
-
-  <footer>
-    © <span id="year"></span> Godfrey Alindi. All rights reserved.
-  </footer>
 </main>
 
+<footer>
+  © <span id="year"></span> Godfrey Alindi. All rights reserved.
+</footer>
+
 <script>
+  // Set current year
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Theme toggle
+  const toggle = document.getElementById('themeToggle');
+  toggle.addEventListener('click', () => {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+  });
 </script>
 </body>
 </html>
-Initial website
