@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Godfrey Alindi | Telecom, AI & Project Delivery Leader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio and personal site of Godfrey Alindi – Telecom, AI & Project Delivery Leader." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.2);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius: 14px;
+      --shadow: 0 18px 45px rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937, #020617 60%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(15,23,42,0.85));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left span {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-right a {
+      margin-left: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-right a:hover { color: var(--accent); }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    section { margin-bottom: 3rem; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); }
+
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle { font-size: 1.05rem; color: var(--muted); max-width: 40rem; }
+
+    .hero-actions {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, border-color 120ms ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #0ea5e9, #22c55e);
+      border: none;
+      color: #0b1120;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(34,197,94,0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(34,197,94,0.35);
+    }
+
+    .btn-ghost {
+      background: rgba(15,23,42,0.8);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-soft);
+      background: rgba(15,23,42,0.95);
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(34,197,94,0.08), transparent 55%),
+                  var(--card);
+      border-radius: var(--radius);
+      border: 1px solid rgba(148,163,184,0.18);
+      padding: 1.3rem 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    h2 { font-size: 1.5rem; margin-bottom: 0.7rem; }
+    h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+
+    .grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+
+    .pill {
+      padding: 0.1rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    ul { margin-left: 1.2rem; margin-top: 0.4rem; }
+    li { margin-bottom: 0.25rem; font-size: 0.92rem; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (min-width: 720px) {
+      .hero { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: center; }
+      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <div class="nav-left"><span>GODFREY ALINDI</span></div>
+    <div class="nav-right">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#writing">Writing</a>
+      <a href="#now">Now</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div>
+      <div class="badge"><span class="dot"></span><span>Telecom • AI • Delivery</span></div>
+      <h1>Telecom, AI & Project Delivery Leader</h1>
+      <p class="subtitle">
+        I design, build and lead complex technology projects across Africa – from greenfield telecom rollouts
+        to AI-driven solutions that solve real-world problems.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">View my work</a>
+        <a href="#contact" class="btn btn-ghost">Contact me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-title">About</div>
+    <div class="card">
+      <h2>About Godfrey “Alindi” Alindi</h2>
+      <p>
+        I’m a telecom and technology professional who enjoys making complex things work in the real world.
+        Over the past decade, I’ve worked across the African continent on projects at the intersection of
+        <strong>network deployment, project management and emerging technologies</strong>.
+      </p>
+      <p>
+        From greenfield rollout leadership to health and safety to AI-driven pilots, my work has always been
+        about building systems that serve people at scale. A defining chapter of my career was helping build a
+        nationwide network from zero, under immense pressure and with the responsibility of delivering safely.
+      </p>
+      <p>
+        Today, I’m deeply interested in the convergence of <strong>AI, telecom, sustainability and human-centred design</strong>.
+        This site is where I document my trajectory, my projects and the evolution of my life’s work.
+      </p>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="section-title">Work & Projects</div>
+
+    <div class="grid grid-2">
+
+      <div class="card">
+        <h3>Greenfield Telecom Rollout – Startup Lead</h3>
+        <p class="muted">Safaricom Ethiopia • 2021–2024</p>
+        <p>
+          Led critical workstreams in the launch of a new telecom operator, coordinating teams across vendor,
+          operator and partners to deliver a nationwide network from scratch.
+        </p>
+        <ul>
+          <li>Coordinated teams across radio, transmission and core rollout.</li>
+          <li>Established deployment processes in a new, challenging market.</li>
+          <li>Championed health & safety across all field operations.</li>
+          <li>Contributed significantly to the zero-to-live nationwide launch.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Nokia Rollout & ESG Projects</h3>
+        <p class="muted">Project / Volunteer PM</p>
+        <p>
+          Supported technical rollout activities while leading ESG-focused initiatives within Nokia, aligning
+          technical and organisational impact goals.
+        </p>
+        <ul>
+          <li>Managed timelines, risks and cross-team communication.</li>
+          <li>Bridged business, technology and social impact objectives.</li>
+          <li>Helped operationalize ESG targets in project execution.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>AI & No-Code Machine Learning Solutions</h3>
+        <p class="muted">Certification & Prototypes</p>
+        <p>
+          Built practical AI prototypes, including spam SMS classification and demand forecasting tools,
+          focusing on translating AI value for non-technical stakeholders.
+        </p>
+        <ul>
+          <li>Developed ML prototypes without heavy coding.</li>
+          <li>Built an SMS spam classifier for fraud reduction.</li>
+          <li>Delivered insights in accessible, business-ready language.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Emerging Interests – EVs, Agritech & Wellness</h3>
+        <p class="muted">Concept Exploration</p>
+        <p>
+          Exploring future-impact opportunities across transport electrification, agritech intelligence and
+          holistic wellness systems.
+        </p>
+        <ul>
+          <li>EV rickshaw business and policy feasibility in Kenya.</li>
+          <li>LLM-driven tools for smallholder farmer insurance & support.</li>
+          <li>Holistic wellness and performance concept development.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="section-title">Writing</div>
+    <div class="card">
+      <h2>Essays & Reflections</h2>
+      <p>This section will feature:</p>
+      <ul>
+        <li>Insights on telecom, connectivity and infrastructure.</li>
+        <li>AI, data and their real-world applications.</li>
+        <li>Leadership lessons from demanding environments.</li>
+        <li>Ideas from books and philosophy that shape my thinking.</li>
+      </ul>
+      <p class="muted">New writing coming soon.</p>
+    </div>
+  </section>
+
+  <!-- NOW -->
+  <section id="now">
+    <div class="section-title">Now</div>
+    <div class="card">
+      <h2>What I’m focused on now</h2>
+      <p class="muted">Updated: December 2025</p>
+      <ul>
+        <li>Transitioning into my next chapter in project/tech leadership & AI-driven roles.</li>
+        <li>Deepening my skills in ML, LLMs and practical applied AI.</li>
+        <li>Exploring long-term impact at the intersection of telecom, sustainability and wellbeing.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-title">Contact</div>
+    <div class="card">
+      <h2>Let’s connect</h2>
+      <p>I’m open to opportunities and conversations related to:</p>
+      <ul>
+        <li>Telecom rollout & project delivery leadership</li>
+        <li>AI-enabled operational solutions</li>
+        <li>Agritech, electrification & wellness innovation</li>
+      </ul>
+      <p style="margin-top: 0.6rem;">
+        <strong>Email:</strong>  
+        <a href="mailto:godfrey.alindi@gmail.com">godfrey.alindi@gmail.com</a><br /><br />
+        
+        <strong>LinkedIn:</strong>  
+        <a href="https://www.linkedin.com/in/oray-alindi-g/" target="_blank">
+          linkedin.com/in/oray-alindi-g/
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Godfrey Alindi. All rights reserved.
+  </footer>
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+Initial website
